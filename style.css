@@ -15,12 +15,13 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
-    background: url(images/soap-bubble-g7c58d9c82_1280.jpg);
-    /* background: url(images/soap-bubbles-g2bcffd43d_1280.jpg);
+    /* background: url(images/soap-bubble-g7c58d9c82_1280.jpg); */
+    background: url(images/soap-bubbles-g2bcffd43d_1280.jpg);
     background: url(images/bubbles-g5bdadbc3b_1280.jpg);
-    background: url(images/background-gd3957fe3a_640.jpg);
-    background: url(images/background-g3f0a58bd2_1280.jpg); */
-    background: url(images/background-g58399419a_1280.jpg);
+    background: url(images/soap-bubbles-g2bcffd43d_1280.jpg);
+    /* background: url(images/background-gd3957fe3a_640.jpg); */
+    /* background: url(images/background-g3f0a58bd2_1280.jpg); */
+    /* background: url(images/background-g58399419a_1280.jpg); */
     /* background: url(images/background-gcca8a817d_1280.jpg); */
 
     background-size: cover;
@@ -201,10 +202,12 @@ img {
 .work .content .workBx {
     width: 50%;
     padding: 20px;
+
 }
 
 .work .content .workBx img {
     max-width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .testimonial {
