@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
+
+:root {
+    --dark-purple: #381684;
+    --pink: #F9B9B3;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
+    font-family: "Fuzzy Bubbles";
     scroll-behavior: smooth;
 }
 
@@ -15,27 +22,23 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
-    /* background: url(images/soap-bubble-g7c58d9c82_1280.jpg); */
+    background: url(images/soap-bubble-g7c58d9c82_1280.jpg);
     background: url(images/soap-bubbles-g2bcffd43d_1280.jpg);
-    background: url(images/bubbles-g5bdadbc3b_1280.jpg);
-    background: url(images/soap-bubbles-g2bcffd43d_1280.jpg);
-    /* background: url(images/background-gd3957fe3a_640.jpg); */
-    /* background: url(images/background-g3f0a58bd2_1280.jpg); */
-    /* background: url(images/background-g58399419a_1280.jpg); */
-    /* background: url(images/background-gcca8a817d_1280.jpg); */
-
+    /* background: url(images/background-g0c235821a_1280.jpg); */
     background-size: cover;
     background-position: right;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .banner h2 {
     font-size: 3em;
-    color: #fff;
+    /* color: #fff; */
     font-weight: 500;
     line-height: 1.5em;
+
 }
 
 .banner h2 span {
@@ -45,7 +48,7 @@ section {
 
 .banner h3 {
     font-size: 1.5em;
-    color: #fff;
+    /* color: #fff; */
     font-weight: 500;
 }
 
@@ -74,12 +77,14 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: 0.5s;
+
 }
 
 header.sticky {
     background: #fff;
     padding: 20px 100px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 header .logo {
@@ -89,6 +94,7 @@ header .logo {
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 2px;
+
 }
 
 
@@ -104,6 +110,7 @@ header ul {
 header ul li {
     position: relative;
     list-style: none;
+
 }
 
 header ul li a {
@@ -111,13 +118,44 @@ header ul li a {
     display: inline-block;
     margin: 0 15px;
     color: #fff;
+    font-size: 20px;
     text-decoration: none;
+}
+
+header ul li a:hover {
+    color: var(--pink);
 }
 
 header.sticky ul li a {
     color: #111;
     font-size: 24px;
     margin: 10px;
+}
+
+header.sticky ul li a:hover {
+    color: var(--dark-purple);
+    font-weight: 600;
+}
+
+header ul li a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--pink);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header.sticky ul li a::before {
+    background-color: var(--dark-purple);
+}
+
+header ul li a:hover::before {
+    transform: scaleX(1);
 }
 
 .heading {
@@ -249,7 +287,7 @@ img {
 }
 
 .contact {
-    background: #111;
+    background: #2e2e2ed8;
 }
 
 .formBx {
@@ -356,7 +394,7 @@ img {
 
     .menu {
         position: fixed;
-        top: 75px;
+        top: 90px;
         left: -100%;
         display: block;
         padding: 100px 50px;
@@ -378,21 +416,25 @@ img {
     }
 
     .toggle {
-        width: 40px;
-        height: 40px;
-        background: url(images/Pictogrammers-Material-Microsoft-xbox-controller-menu.48.png);
+        width: 50px;
+        height: 50px;
+        /* background: url(images/Pictogrammers-Material-Microsoft-xbox-controller-menu.48.png);
+        background: url(images/icons8-menu-64.png); */
+        background: url(images/icons8-menu-pastel/icons8-menu-128.png);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 30px;
+        background-size: 50px;
         cursor: pointer;
     }
 
     .toggle.active {
-        background: url(images/Pictogrammers-Material-Close-circle.48.png);
+
+        background: url(images/icons8-cancel-128.png);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: 25px;
+        background-size: 55px;
         cursor: pointer;
+
     }
 
     .toggle.active .sticky {
@@ -475,5 +517,50 @@ img {
 
     section {
         padding: 100px 20px;
+    }
+
+    header ul li a::before {
+        background-color: var(--dark-purple);
+    }
+
+    header ul li a:hover {
+        color: var(--dark-purple);
+    }
+
+}
+
+
+.btn-shine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 12px 48px;
+    /* color: #000000; */
+    background: linear-gradient(to right, #0f0101 0, rgb(22, 5, 68) 10%, #fffcfc 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+
+@keyframes shine {
+    0% {
+        background-position: 0
+    }
+
+    60% {
+        background-position: 180px
+    }
+
+    100% {
+        background-position: 250px
     }
 }
