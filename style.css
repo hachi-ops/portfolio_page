@@ -32,13 +32,12 @@ section {
 .banner {
     position: relative;
     min-height: 100vh;
-    background: url(images/soap-bubble-g7c58d9c82_1280.jpg);
-    background: url(images/soap-bubbles-g2bcffd43d_1280.jpg);
+
     background: url(images/background-g0c235821a_1280.jpg);
     background-size: cover;
     background-position: right;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
@@ -440,17 +439,17 @@ img {
         padding: 100px 0;
     }
 
-    .banner {
+    /* .banner {
         padding: 150px 50px 100px;
-    }
+    } */
 
-    .banner h2 {
+    /* .banner h2 {
         font-size: 1.5em;
-    }
+    } */
 
-    .banner h3 {
+    /* .banner h3 {
         font-size: 1em;
-    }
+    } */
 
     .btn {
         margin-top: 10px;
@@ -496,9 +495,9 @@ img {
         padding: 20px;
     }
 
-    .banner {
+    /* .banner {
         padding: 150px 20px 100px;
-    }
+    } */
 
 
 
@@ -512,12 +511,9 @@ img {
 
 }
 
-.container {
-    overflow: hidden;
-}
 
 .is-animated {
-    font-family: "Helvetica Neue";
+
     font-weight: bold;
     padding: 0;
     position: relative;
@@ -527,7 +523,7 @@ img {
 
 .is-animated span {
     display: block;
-    padding: 0 10px;
+    /* padding: 0 10px; */
     /* width: 200px; */
 }
 
@@ -711,4 +707,192 @@ section .marquee {
     .marquee:after {
         width: 5rem;
     }
+}
+
+
+
+.banner-button {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    height: auto;
+    padding: 15px 24px;
+    margin: 50px;
+    outline: none;
+
+}
+
+.banner-button:hover {
+    box-shadow: 0 0 10px 5px #48abe0,
+        0 0 20px 7px #ebecca,
+        0 0 25px 20px #8a2be2,
+        0 0 30px 25px #ff1493;
+}
+
+
+
+/*  */
+
+.glow {
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    line-height: 30vw;
+    text-align: center;
+    color: #cbd2e1;
+    background-color: #151823;
+    animation: textColor 10s ease infinite;
+    font-size: 20px;
+}
+
+.glow:after {
+    position: absolute;
+    content: "";
+    top: 5vw;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.75);
+    -webkit-filter: blur(5vw);
+    -moz-filter: blur(5vw);
+    -ms-filter: blur(5vw);
+    filter: blur(5vw);
+    background: linear-gradient(270deg, #f2feff, #7e0fff);
+    background-size: 200% 200%;
+    animation: animateGlow 10s ease infinite;
+}
+
+@keyframes animateGlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes textColor {
+    0% {
+        color: #530fff;
+    }
+
+    50% {
+        color: #ffffff;
+    }
+
+    100% {
+        color: #0f93ff;
+    }
+}
+
+
+/*  */
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+#glow_box {
+    display: inline-block;
+    width: 1080px;
+    height: 88px;
+    position: absolute;
+    top: calc(50% - 44px);
+    left: calc(50% - 540px);
+    font-family: "Droid Sans", sans-serif;
+    font-weight: 700;
+    font-size: 6vw;
+    /* responsive text: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_responsive_text */
+    line-height: 88px;
+    /* the same as DIV container height to center the text */
+    text-align: center;
+    vertical-align: middle;
+}
+
+.glow_text {
+    position: relative;
+    background: transparent;
+    color: #f5f5f5;
+    font-variant: small-caps;
+    letter-spacing: 0.05em;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    text-shadow: none;
+
+    transition: all 0.6s linear;
+    /* vendorless fallback */
+    -o-transition: all 0.6s linear;
+    /* opera */
+    -ms-transition: all 0.6s linear;
+    /* IE 10 */
+    -moz-transition: all 0.6s linear;
+    /* Firefox */
+    -webkit-transition: all 0.6s linear;
+    /*safari and chrome */
+}
+
+.glow_text:hover {
+    /*
+      text-shadow:
+      0 0 5px rgb(255, 255, 255, 1),
+          0 0 10px rgb(255, 255, 255, 1),
+          0 0 20px rgb(255, 255, 255, 1),
+          0 0 30px rgb(255, 255, 255, 1),
+      -1px 0 cyan,
+      0 1px cyan,
+      1px 0 cyan,
+      0 -1px cyan;
+    -webkit-text-stroke: 1px cyan;
+    */
+    text-shadow:
+        0 0 5px rgb(255, 255, 255, 1),
+        0 0 10px rgb(255, 255, 255, 1),
+        0 0 20px rgb(255, 255, 255, 1),
+        0 0 30px rgb(255, 255, 255, 1);
+}
+
+p.glow_text span.inner {
+    position: relative;
+    z-index: 2;
+}
+
+#glow_box p.glow_text span.inner {
+    position: relative;
+    content: 'Hi, I/m Helen. A Full Stack Developer.';
+    z-index: 2;
+}
+
+#glow_box:hover p.glow_text span.inner {
+    display: none;
+}
+
+#glow_box:hover p.glow_text:after {
+    position: relative;
+    content: 'Welcome to my site!!';
+    z-index: 2;
+    color: #111;
+}
+
+
+.banner-btn {
+    position: absolute;
+    top: 100px;
+    left: 80%;
 }
