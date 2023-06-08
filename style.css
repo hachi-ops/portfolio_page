@@ -2,78 +2,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
 
 :root {
-    --dark-purple: #381684;
-    --pink: #F9B9B3;
+    --dark-purple: #2100C4;
+    --pink: #DDBAFF;
+    /* marquee */
+    --marquee-width: 100vw;
+    --marquee-height: 15vh;
+    /* --marquee-elements: 12; */
+    /* defined with JavaScript */
+    --marquee-elements-displayed: 9;
+    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
+    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
 }
 
-* {
+* , 
+*::after,
+*::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, sans-serif;
     font-family: "Fuzzy Bubbles";
     scroll-behavior: smooth;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
 }
 
-section {
-    padding-top: 150px;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
-
-}
-
-.banner {
-    position: relative;
-    min-height: 100vh;
-
-    background: url(images/background-g0c235821a_1280.jpg);
-    background-size: cover;
-    background-position: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner h2 {
-    font-size: 3em;
-    /* color: #fff; */
-    font-weight: 500;
-    line-height: 1.5em;
-
-}
-
-.banner h2 span {
-    font-size: 1.5em;
-    font-weight: 700;
-}
-
-.banner h3 {
-    font-size: 1.5em;
-    /* color: #fff; */
-    font-weight: 500;
-}
-
-.btn {
-    position: relative;
-    background: #2196f3;
-    display: inline-block;
-    color: #fff;
-    margin-top: 20px;
-    padding: 10px 30px;
-    font-size: 18px;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-weight: 500;
-}
-
+/* --- HEADER --- */
 header {
     position: fixed;
     top: 0;
@@ -85,13 +39,11 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: 0.5s;
-
 }
 
 header.sticky {
     background: #fff;
     padding: 20px 100px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -102,9 +54,7 @@ header .logo {
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 2px;
-
 }
-
 
 header.sticky .logo {
     color: #111;
@@ -118,7 +68,6 @@ header ul {
 header ul li {
     position: relative;
     list-style: none;
-
 }
 
 header ul li a {
@@ -165,6 +114,59 @@ header.sticky ul li a::before {
 header ul li a:hover::before {
     transform: scaleX(1);
 }
+
+section {
+    padding-top: 150px;
+    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */  
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+    /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.banner {
+    position: relative;
+    min-height: 100vh;
+    background: url(images/background-g0c235821a_1280.jpg);
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h2 {
+    font-size: 3em;
+    /* color: #fff; */
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.banner h2 span {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.banner h3 {
+    font-size: 1.5em;
+    /* color: #fff; */
+    font-weight: 500;
+}
+
+.btn {
+    position: relative;
+    background: #2196f3;
+    display: inline-block;
+    color: #fff;
+    margin-top: 20px;
+    padding: 10px 30px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+
 
 .heading {
     width: 100%;
@@ -423,7 +425,7 @@ img {
 
     .toggle.active {
 
-        background: url(images/icons8-cancel-128.png);
+        background: url(images/icons8-menu-pastel/icons8-cancel-64.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 55px;
@@ -611,15 +613,7 @@ img {
 }
 
 
-:root {
-    --marquee-width: 100vw;
-    --marquee-height: 15vh;
-    /* --marquee-elements: 12; */
-    /* defined with JavaScript */
-    --marquee-elements-displayed: 9;
-    --marquee-element-width: calc(var(--marquee-width) / var(--marquee-elements-displayed));
-    --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
-}
+
 
 section .marquee {
     width: var(--marquee-width);
@@ -799,13 +793,7 @@ section .marquee {
 
 /*  */
 
-*,
-*::after,
-*::before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+
 
 
 
